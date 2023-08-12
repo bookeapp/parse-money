@@ -113,15 +113,18 @@ var parseMoney = function (text) {
     var currenciesFound = [];
     Object.keys(exports.symbols).forEach(function (currency) {
         exports.symbols[currency].find(function (symbol) {
-            var matchFound = !!text.match(new RegExp(escapeStringRegExp(symbol) + "\\.?", "i"));
+            var matchFound = text.match(new RegExp(escapeStringRegExp(symbol) + "\\.?", "i"));
             if (matchFound) {
-                currenciesFound.push({ currency: currency, index: index });
+                currenciesFound.push({ currency: currency, index: matchFound.index || 0, match: matchFound[0] });
             }
         });
     });
     var index = 0;
     var currency = null;
     if (currenciesFound.length >= 1) {
+        currenciesFound = currenciesFound.sort(function (a, b) {
+            return b.match.length - a.match.length;
+        });
         currency = currenciesFound[0].currency;
         index = currenciesFound[0].index;
     }

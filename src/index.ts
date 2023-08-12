@@ -118,13 +118,13 @@ const parseMoney = (text: string) => {
   let output: Money | null = null;
 
   //scan for currency
-  const currenciesFound: { currency: Currency; index: number }[] = [];
+  let currenciesFound: { currency: Currency; index: number, match: string }[] = [];
   (Object.keys(symbols) as Currency[]).forEach((currency) => {
     symbols[currency].find((symbol) => {
-      const matchFound = !!text.match(new RegExp(`${escapeStringRegExp(symbol)}\\.?`, "i"));
+      const matchFound = text.match(new RegExp(`${escapeStringRegExp(symbol)}\\.?`, "i"));
       if (matchFound) {
         //found symbol
-        currenciesFound.push({ currency, index });
+        currenciesFound.push({ currency, index: matchFound.index || 0, match: matchFound[0] });
       }
     });
   });
@@ -132,6 +132,9 @@ const parseMoney = (text: string) => {
   let index = 0;
   let currency: Currency | null = null;
   if (currenciesFound.length >= 1) {
+    currenciesFound = currenciesFound.sort((a, b) => {
+      return b.match.length - a.match.length;
+    });
     currency = currenciesFound[0].currency;
     index = currenciesFound[0].index;
   }
