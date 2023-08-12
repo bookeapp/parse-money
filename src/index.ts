@@ -1,4 +1,5 @@
 import { Money, Currency } from "./types";
+import escapeStringRegExp from "escape-string-regexp";
 
 export const symbols: {
   [currency: string]: string[];
@@ -109,7 +110,7 @@ const parseMoney = (text: string) => {
   const currenciesFound: { currency: Currency; index: number }[] = [];
   (Object.keys(symbols) as Currency[]).forEach((currency) => {
     symbols[currency].find((symbol) => {
-      const matchFound = !!text.match(new RegExp(`${symbol}\.?`, "i"));
+      const matchFound = !!text.match(new RegExp(`${escapeStringRegExp(symbol)}\\.?`, "i"));
       if (matchFound) {
         //found symbol
         currenciesFound.push({ currency, index });
