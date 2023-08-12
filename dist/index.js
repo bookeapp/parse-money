@@ -1,10 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.symbols = void 0;
-var escape_string_regexp_1 = __importDefault(require("escape-string-regexp"));
 exports.symbols = {
     AUD: ["A$", "AU$", "AUD"],
     BDT: ["৳", "TAKA", "BDT"],
@@ -104,12 +100,20 @@ exports.symbols = {
     ZMW: ["ZK", "ZMW"],
     ZWL: ["$", "ZWL"],
 };
+var escapeStringRegExp = function (string) {
+    if (typeof string !== 'string') {
+        throw new TypeError('Expected a string');
+    }
+    return string
+        .replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
+        .replace(/-/g, '\\x2d');
+};
 var parseMoney = function (text) {
     var output = null;
     var currenciesFound = [];
     Object.keys(exports.symbols).forEach(function (currency) {
         exports.symbols[currency].find(function (symbol) {
-            var matchFound = !!text.match(new RegExp(escape_string_regexp_1.default(symbol) + "\\.?", "i"));
+            var matchFound = !!text.match(new RegExp(escapeStringRegExp(symbol) + "\\.?", "i"));
             if (matchFound) {
                 currenciesFound.push({ currency: currency, index: index });
             }

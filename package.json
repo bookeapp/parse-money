@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mindtricksdev/parse-money.git"
+    "url": "git+https://github.com/bookeapp/parse-money.git"
   },
   "keywords": [
     "parse",
@@ -28,13 +28,9 @@
     "currency",
     "price"
   ],
-  "author": "Daniel Iancu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mindtricksdev/parse-money/issues"
+    "url": "https://github.com/bookeapp/parse-money/issues"
   },
-  "homepage": "https://github.com/mindtricksdev/parse-money#readme",
-  "dependencies": {
-    "escape-string-regexp": "^5.0.0"
-  }
+  "homepage": "https://github.com/bookeapp/parse-money#readme"
 }
