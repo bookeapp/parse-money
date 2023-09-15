@@ -131,7 +131,8 @@ var parseMoney = function (text) {
     var start = Math.max(0, index - 40);
     var end = index + 40;
     var slice = text.substr(start, end);
-    slice = slice.replace(/[^\d|^\.|^,]/g, "");
+    slice = slice.replace(/[^\d|^\.|^,|^-]/g, "");
+    slice = slice.replace(/(?!^)-/g, "");
     slice = slice.replace(/(,|\.)*$/, "");
     while (slice.charAt(0) === "." || slice.charAt(0) === ",") {
         slice = slice.substr(1);

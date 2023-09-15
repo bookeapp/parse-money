@@ -145,7 +145,8 @@ const parseMoney = (text: string) => {
   let slice = text.substr(start, end);
 
   //remove text
-  slice = slice.replace(/[^\d|^\.|^,]/g, "");
+  slice = slice.replace(/[^\d|^\.|^,|^-]/g, "");
+  slice = slice.replace(/(?!^)-/g, "");
   //remove any trailing dots and commas
   slice = slice.replace(/(,|\.)*$/, "");
   //remove any dot and comma from the front
