@@ -102,6 +102,8 @@ export const symbols: {
   ZWL: ["ZWL"],
 }
 
+const KWD = "KWD";
+
 const escapeStringRegExp = (string: string) => {
 	if (typeof string !== 'string') {
 		throw new TypeError('Expected a string');
@@ -117,13 +119,13 @@ const escapeStringRegExp = (string: string) => {
 const parseMoney = (text: string) => {
   let output: Money | null = null;
 
-  //scan for currency
+  // scan for currency
   let currenciesFound: { currency: Currency; index: number, match: string }[] = [];
   (Object.keys(symbols) as Currency[]).forEach((currency) => {
     symbols[currency].find((symbol) => {
       const matchFound = text.match(new RegExp(`${escapeStringRegExp(symbol)}\\.?`, "i"));
       if (matchFound) {
-        //found symbol
+        // found symbol
         currenciesFound.push({ currency, index: matchFound.index || 0, match: matchFound[0] });
       }
     });
@@ -188,7 +190,7 @@ const parseMoney = (text: string) => {
     //215.1 is 215.1
     const segments = slice.split(".");
     const second = segments[1];
-    if (second.length === 3) {
+    if (second.length === 3 && currency !== KWD) {
       //group separator
       slice = slice.replace(".", "");
     } else {
