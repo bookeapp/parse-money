@@ -33,7 +33,7 @@ exports.symbols = {
     KES: ["KSH", "KES"],
     KHR: ["៛", "KHR"],
     KRW: ["₩", "KRW"],
-    KWD: ["KD", "KWD"],
+    KWD: ["KD", "K.D", "KWD"],
     LAK: ["₭", "LAK"],
     LBP: ["ل.ل", "L£", "LBP"],
     LKR: ["LKR"],
