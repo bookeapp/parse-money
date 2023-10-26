@@ -100,6 +100,7 @@ exports.symbols = {
     ZMW: ["ZK", "ZMW"],
     ZWL: ["ZWL"],
 };
+var KWD = "KWD";
 var escapeStringRegExp = function (string) {
     if (typeof string !== 'string') {
         throw new TypeError('Expected a string');
@@ -113,7 +114,7 @@ var parseMoney = function (text) {
     var currenciesFound = [];
     Object.keys(exports.symbols).forEach(function (currency) {
         exports.symbols[currency].find(function (symbol) {
-            var matchFound = text.match(new RegExp(escapeStringRegExp(symbol) + "\\.?", "i"));
+            var matchFound = text.match(new RegExp("".concat(escapeStringRegExp(symbol), "\\.?"), "i"));
             if (matchFound) {
                 currenciesFound.push({ currency: currency, index: matchFound.index || 0, match: matchFound[0] });
             }
@@ -131,7 +132,8 @@ var parseMoney = function (text) {
     var start = Math.max(0, index - 40);
     var end = index + 40;
     var slice = text.substr(start, end);
-    slice = slice.replace(/[^\d|^\.|^,]/g, "");
+    slice = slice.replace(/[^\d|^\.|^,|^-]/g, "");
+    slice = slice.replace(/(?!^)-/g, "");
     slice = slice.replace(/(,|\.)*$/, "");
     while (slice.charAt(0) === "." || slice.charAt(0) === ",") {
         slice = slice.substr(1);
@@ -162,7 +164,7 @@ var parseMoney = function (text) {
     else if (dotCount === 1 && commaCount === 0) {
         var segments = slice.split(".");
         var second = segments[1];
-        if (second.length === 3) {
+        if (second.length === 3 && currency !== KWD) {
             slice = slice.replace(".", "");
         }
         else {
