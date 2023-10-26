@@ -141,6 +141,58 @@ test("RON", (done) => {
   done()
 })
 
+test("KWD", (done) => {
+  same(parseMoney("100KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100 KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00 KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000 KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  done()
+})
+
 test("USD", (done) => {
   same(parseMoney("100"), {
     amount: 100,
@@ -202,58 +254,6 @@ test("Multiple", (done) => {
   same(parseMoney("lei100 and $500"), {
     amount: 100500,
     currency: "RON",
-  });
-  done()
-})
-
-test("KWD", (done) => {
-  same(parseMoney("100KD"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100 KD"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100K.D"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100 K.D"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.00KD"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.00 KD"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.00K.D"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.00 K.D"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.000KD"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.000 KD"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.000K.D"), {
-    amount: 100,
-    currency: "KWD",
-  });
-  same(parseMoney("100.000 K.D"), {
-    amount: 100,
-    currency: "KWD",
   });
   done()
 })
