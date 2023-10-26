@@ -154,7 +154,15 @@ test("KWD", (done) => {
     amount: 100,
     currency: "KWD",
   });
+  same(parseMoney("100K·D"), {
+    amount: 100,
+    currency: "KWD",
+  });
   same(parseMoney("100 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100 K·D"), {
     amount: 100,
     currency: "KWD",
   });
@@ -170,7 +178,15 @@ test("KWD", (done) => {
     amount: 100,
     currency: "KWD",
   });
+  same(parseMoney("100.00K·D"), {
+    amount: 100,
+    currency: "KWD",
+  });
   same(parseMoney("100.00 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00 K·D"), {
     amount: 100,
     currency: "KWD",
   });
@@ -186,7 +202,15 @@ test("KWD", (done) => {
     amount: 100,
     currency: "KWD",
   });
+  same(parseMoney("100.000K·D"), {
+    amount: 100,
+    currency: "KWD",
+  });
   same(parseMoney("100.000 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000 K·D"), {
     amount: 100,
     currency: "KWD",
   });

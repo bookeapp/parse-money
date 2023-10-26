@@ -34,7 +34,7 @@ export const symbols: {
   KES: ["KSH", "KES"],
   KHR: ["៛", "KHR"],
   KRW: ["₩", "KRW"],
-  KWD: ["د.ك", "KD", "K.D", "KWD"],
+  KWD: ["د.ك", "KD", "K.D", "K·D", "KWD"],
   LAK: ["₭", "LAK"],
   LBP: ["ل.ل", "L£", "LBP"],
   LKR: ["LKR"],
