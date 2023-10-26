@@ -7,7 +7,7 @@ exports.symbols = {
     BGN: ["ЛВ", "BGN"],
     BRL: ["R$", "BRL"],
     CAD: ["C$", "CA$", "CAD"],
-    CHF: ["FR.", "CHF"],
+    CHF: ["FR", "CHF"],
     CLP: ["CLP"],
     CNY: ["¥", "圓", "CNY"],
     CZK: ["KČ", "CZK"],
@@ -33,11 +33,11 @@ exports.symbols = {
     KES: ["KSH", "KES"],
     KHR: ["៛", "KHR"],
     KRW: ["₩", "KRW"],
-    KWD: ["KD", "K.D", "KWD"],
+    KWD: ["د.ك", "KD", "K.D", "KWD"],
     LAK: ["₭", "LAK"],
     LBP: ["ل.ل", "L£", "LBP"],
     LKR: ["LKR"],
-    MAD: ["د.م.", "MAD"],
+    MAD: ["د.م.", "DH", "MAD"],
     MDL: ["L", "MDL"],
     MKD: ["ДЕН", "MKD"],
     MMK: ["K", "MMK"],
@@ -52,7 +52,7 @@ exports.symbols = {
     NOK: ["NOK"],
     NPR: ["NPR"],
     NZD: ["NZ$", "NZD"],
-    OMR: ["ر.ع.", "OMR"],
+    OMR: ["ر.ع.", "﷼", "R.O", "OMR"],
     PAB: ["B/", "PAB"],
     PEN: ["S/", "PEN"],
     PGK: ["PGK"],
@@ -60,11 +60,11 @@ exports.symbols = {
     PKR: ["PKR"],
     PLN: ["ZŁ", "PLN"],
     PYG: ["₲", "PYG"],
-    QAR: ["ر.ق", "QAR"],
+    QAR: ["ر.ق", "QR", "QAR"],
     RON: ["LEI", "RON"],
-    RSD: ["ДИН.", "RSD"],
+    RSD: ["ДИН", "RSD"],
     RUB: ["₽", "РУБ", "RUB"],
-    SAR: ["ر.س", "SAR"],
+    SAR: ["ر.س", "SR", "SAR"],
     SCR: ["SCR"],
     SEK: ["SEK"],
     SGD: ["S$", "SGD"],
@@ -77,7 +77,7 @@ exports.symbols = {
     THB: ["฿", "THB"],
     TJS: ["SM", "TJS"],
     TMT: ["T", "TMT"],
-    TND: ["د.ت", "TND"],
+    TND: ["د.ت", "DT", "TND"],
     TOP: ["T$", "TOP"],
     TRY: ["₺", "TRY"],
     TTD: ["TT$", "TTD"],
@@ -114,7 +114,7 @@ var parseMoney = function (text) {
     var currenciesFound = [];
     Object.keys(exports.symbols).forEach(function (currency) {
         exports.symbols[currency].find(function (symbol) {
-            var matchFound = text.match(new RegExp("".concat(escapeStringRegExp(symbol), "\\.?"), "i"));
+            var matchFound = text.match(new RegExp(escapeStringRegExp(symbol) + "\\.?", "i"));
             if (matchFound) {
                 currenciesFound.push({ currency: currency, index: matchFound.index || 0, match: matchFound[0] });
             }

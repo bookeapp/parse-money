@@ -1,4 +1,4 @@
-const { test, run, assert, same } = require("../utils/test-runner")
+const { test, run, same } = require("../utils/test-runner")
 const { default: parseMoney } = require("../dist/index.js");
 
 test("Main", (done) => {
@@ -207,14 +207,54 @@ test("Multiple", (done) => {
 })
 
 test("KWD", (done) => {
-  same(parseMoney("60.000 KWD"), {
-    amount: 60,
+  same(parseMoney("100KD"), {
+    amount: 100,
     currency: "KWD",
-  }, "60.000 KWD")
-  same(parseMoney("KWD 999.000"), {
-    amount: 999,
+  });
+  same(parseMoney("100 KD"), {
+    amount: 100,
     currency: "KWD",
-  }, "KWD 999.000")
+  });
+  same(parseMoney("100K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00 KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.00 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000 KD"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
+  same(parseMoney("100.000 K.D"), {
+    amount: 100,
+    currency: "KWD",
+  });
   done()
 })
 
