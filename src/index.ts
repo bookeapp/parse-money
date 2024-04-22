@@ -3,6 +3,8 @@ import { Money, Currency } from "./types";
 export const symbols: {
   [currency: string]: string[];
 } = {
+  AED: ["د.إ", "DH", "AED"],
+  ARS: ["ARS"],
   AUD: ["A$", "AU$", "AUD"],
   BDT: ["৳", "TAKA", "BDT"],
   BGN: ["ЛВ", "BGN"],
@@ -11,8 +13,10 @@ export const symbols: {
   CHF: ["FR", "CHF"],
   CLP: ["CLP"],
   CNY: ["¥", "圓", "CNY"],
+  COP: ["COP"],
   CZK: ["KČ", "CZK"],
   DKK: ["DKK"],
+  EGP: ["EGP"],
   EUR: ["€", "EURO", "EUR"],
   FJD: ["FJ$", "FJD"],
   GBP: ["£", "GBP"],
@@ -25,7 +29,8 @@ export const symbols: {
   HRK: ["KN", "HRK"],
   HTG: ["G", "HTG"],
   HUF: ["FT", "HUF"],
-  ILS: ["₪", "ILS"],
+  IDR: ["IDR"],
+  ILS: ["₪", "NIS", "ILS"],
   INR: ["₹", "RS", "RP", "INR"],
   ISK: ["ISK"],
   JMD: ["J$", "JMD"],
@@ -38,7 +43,7 @@ export const symbols: {
   LAK: ["₭", "LAK"],
   LBP: ["ل.ل", "L£", "LBP"],
   LKR: ["LKR"],
-  MAD: ["د.م.", "DH", "MAD"],
+  MAD: ["د.م.", "MAD"],
   MDL: ["L", "MDL"],
   MKD: ["ДЕН", "MKD"],
   MMK: ["K", "MMK"],

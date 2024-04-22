@@ -3,7 +3,7 @@ export type Money = {
   currency: Currency | null;
 };
 
-export type Currency = "AUD" | "BDT" | "BGN" | "BRL" | "CAD" | "CHF" | "CLP" | "CNY"
+export type Currency = "AUD" | "AED" | "BDT" | "BGN" | "BRL" | "CAD" | "CHF" | "CLP" | "CNY"
   | "CZK" | "DKK" | "EUR" | "FJD" | "GBP" | "GEL" | "GHS" | "GMD" | "GTQ" | "GYD"
   | "HKD" | "HRK" | "HTG" | "HUF" | "ILS" | "INR" | "ISK" | "JMD" | "JOD" | "JPY"
   | "KES" | "KHR" | "KRW" | "KWD" | "LAK" | "LBP" | "LKR" | "MAD" | "MDL" | "MKD"
