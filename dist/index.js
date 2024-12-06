@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.symbols = void 0;
-exports.symbols = {
+exports.Symbols = void 0;
+exports.Symbols = {
     AED: ["د.إ", "DH", "AED"],
     AFN: ["؋", "AFN"],
     ALL: ["L", "ALL"],
@@ -38,35 +38,35 @@ exports.symbols = {
     CVE: ["ESC", "CVE"],
     CZK: ["KČ", "CZK"],
     DJF: ["FDJ", "DJF"],
-    DKK: ["KR", "DKK"],
+    DKK: ["DKK"],
     DOP: ["RD$", "DOP"],
     DZD: ["د.ج", "DA", "DZD"],
     EGP: ["E£", "EGP"],
     ERN: ["NFK", "ERN"],
-    ETB: ["BR", "ETB"],
+    ETB: ["ETB"],
     EUR: ["€", "EURO", "EUR"],
     FJD: ["FJ$", "FJD"],
     FKP: ["FK£", "FKP"],
     GBP: ["£", "GBP"],
     GEL: ["₾", "GEL"],
-    GGP: ["£", "GGP"],
+    GGP: ["GGP"],
     GHS: ["GH₵", "GHS"],
-    GIP: ["£", "GIP"],
+    GIP: ["GIP"],
     GMD: ["D", "GMD"],
     GNF: ["FG", "GNF"],
     GTQ: ["Q", "GTQ"],
     GYD: ["GY$", "GYD"],
     HKD: ["HK$", "HKD"],
-    HNL: ["L", "HNL"],
+    HNL: ["HNL"],
     HUF: ["FT", "HUF"],
-    IDR: ["RP", "IDR"],
+    IDR: ["IDR"],
     ILS: ["₪", "NIS", "ILS"],
-    IMP: ["£", "IMP"],
+    IMP: ["IMP"],
     INR: ["₹", "RS", "RP", "INR"],
     IQD: ["ع.د", "IQD"],
     IRR: ["﷼", "IRR"],
-    ISK: ["KR", "ISK"],
-    JEP: ["£", "JEP"],
+    ISK: ["ISK"],
+    JEP: ["JEP"],
     JMD: ["J$", "JMD"],
     JOD: ["د.ا", "JD", "JOD"],
     JPY: ["円", "JPY"],
@@ -74,26 +74,26 @@ exports.symbols = {
     KGS: ["СОМ", "KGS"],
     KHR: ["៛", "KHR"],
     KMF: ["CF", "KMF"],
-    KPW: ["₩", "KPW"],
+    KPW: ["KPW"],
     KRW: ["₩", "KRW"],
     KWD: ["د.ك", "KD", "KWD"],
     KYD: ["CI$", "KYD"],
     KZT: ["₸", "KZT"],
     LAK: ["₭", "LAK"],
     LBP: ["ل.ل", "L£", "LBP"],
-    LKR: ["RS", "LKR"],
+    LKR: ["LKR"],
     LRD: ["L$", "LRD"],
-    LSL: ["L", "LSL"],
+    LSL: ["LSL"],
     LYD: ["ل.د", "LYD"],
     MAD: ["د.م", "MAD"],
-    MDL: ["L", "MDL"],
+    MDL: ["MDL"],
     MGA: ["AR", "MGA"],
     MKD: ["ДЕН", "MKD"],
     MMK: ["K", "MMK"],
     MNT: ["₮", "MNT"],
     MOP: ["MOP$", "MOP"],
     MRU: ["UM", "MRU"],
-    MUR: ["RS", "MUR"],
+    MUR: ["MUR"],
     MVR: ["RF", "MVR"],
     MWK: ["MK", "MWK"],
     MXN: ["MX$", "MXN"],
@@ -101,15 +101,15 @@ exports.symbols = {
     MZN: ["MT", "MZN"],
     NAD: ["N$", "NAD"],
     NGN: ["₦", "NGN"],
-    NIO: ["C$", "NIO"],
-    NOK: ["KR", "NOK"],
-    NPR: ["RS", "NPR"],
+    NIO: ["NIO"],
+    NOK: ["NOK"],
+    NPR: ["NPR"],
     NZD: ["NZ$", "NZD"],
-    OMR: ["ر.ع", "﷼", "R.O", "OMR"],
+    OMR: ["ر.ع", "R.O", "OMR"],
     PEN: ["S/", "PEN"],
-    PGK: ["K", "PGK"],
+    PGK: ["PGK"],
     PHP: ["₱", "PHP"],
-    PKR: ["RS", "PKR"],
+    PKR: ["PKR"],
     PLN: ["ZŁ", "PLN"],
     PYG: ["₲", "PYG"],
     QAR: ["ر.ق", "QR", "QAR"],
@@ -119,18 +119,18 @@ exports.symbols = {
     RWF: ["FRW", "RWF"],
     SAR: ["ر.س", "SR", "SAR"],
     SBD: ["SI$", "SBD"],
-    SCR: ["SR", "SCR"],
+    SCR: ["SCR"],
     SDG: ["ج.س", "SDG"],
     SEK: ["KR", "SEK"],
     SGD: ["S$", "SGD"],
-    SHP: ["£", "SHP"],
+    SHP: ["SHP"],
     SLL: ["LE", "SLL"],
-    SOS: ["SH", "SOS"],
+    SOS: ["SOS"],
     SRD: ["SR$", "SRD"],
-    SSP: ["£", "SSP"],
+    SSP: ["SSP"],
     STN: ["DB", "STN"],
     SYP: ["£S", "SYP"],
-    SZL: ["L", "SZL"],
+    SZL: ["SZL"],
     THB: ["฿", "THB"],
     TJS: ["SM", "TJS"],
     TMT: ["M", "TMT"],
@@ -153,12 +153,11 @@ exports.symbols = {
     XCD: ["EC$", "XCD"],
     XOF: ["CFA", "XOF"],
     XPF: ["₣", "XPF"],
-    YER: ["﷼", "YRL", "YRLS", "YER"],
+    YER: ["YRL", "YRLS", "YER"],
     ZAR: ["R", "ZAR"],
-    ZMW: ["K", "ZK", "ZMW"],
+    ZMW: ["ZK", "ZMW"],
     ZWG: ["ZIG", "ZWG"]
 };
-var KWD = "KWD";
 var escapeStringRegExp = function (string) {
     if (typeof string !== 'string') {
         throw new TypeError('Expected a string');
@@ -170,8 +169,8 @@ var escapeStringRegExp = function (string) {
 var parseMoney = function (text) {
     var output = null;
     var currenciesFound = [];
-    Object.keys(exports.symbols).forEach(function (currency) {
-        exports.symbols[currency].find(function (symbol) {
+    Object.keys(exports.Symbols).forEach(function (currency) {
+        exports.Symbols[currency].find(function (symbol) {
             var matchFound = text.match(new RegExp(escapeStringRegExp(symbol) + "\\.?", "i"));
             if (matchFound) {
                 currenciesFound.push({ currency: currency, index: matchFound.index || 0, match: matchFound[0] });
@@ -222,7 +221,7 @@ var parseMoney = function (text) {
     else if (dotCount === 1 && commaCount === 0) {
         var segments = slice.split(".");
         var second = segments[1];
-        if (second.length === 3 && currency !== KWD) {
+        if (second.length === 3 && currency !== exports.Symbols.KWD[exports.Symbols.KWD.length - 1]) {
             slice = slice.replace(".", "");
         }
         else {

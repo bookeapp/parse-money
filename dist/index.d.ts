@@ -1,5 +1,5 @@
 import { Money } from "./types";
-export declare const symbols: {
+export declare const Symbols: {
     [currency: string]: string[];
 };
 declare const parseMoney: (text: string) => Money | null;
