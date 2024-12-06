@@ -1,4 +1,4 @@
-import { Money } from "./types";
+import { Money } from './types';
 export declare const Symbols: {
     [currency: string]: string[];
 };

@@ -1,15 +1,24 @@
 {
   "name": "parse-money",
-  "version": "1.0.12",
+  "version": "1.1.0",
   "description": "Extract money from text (number and currency detection)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "node ./test/index.js",
     "build": "npm run compile",
-    "compile": "tsc"
+    "compile": "tsc",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint --fix . --ext .ts"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.0.5",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "typescript": "^4.0.2"
   },
   "repository": {

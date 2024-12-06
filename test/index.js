@@ -1,4 +1,4 @@
-const { test, run, same } = require("../utils/test-runner")
+const { test, run, same } = require("../utils/test-runner");
 const { default: parseMoney } = require("../dist/index.js");
 
 test("Main", (done) => {
@@ -58,8 +58,8 @@ test("Main", (done) => {
     amount: 495.61,
     currency: "RON",
   });
-  done()
-})
+  done();
+});
 
 test("RON", (done) => {
   same(parseMoney("lei100"), {
@@ -138,8 +138,8 @@ test("RON", (done) => {
     amount: 215,
     currency: "RON",
   });
-  done()
-})
+  done();
+});
 
 test("KWD", (done) => {
   same(parseMoney("100KD"), {
@@ -214,8 +214,8 @@ test("KWD", (done) => {
     amount: 100,
     currency: "KWD",
   });
-  done()
-})
+  done();
+});
 
 test("USD", (done) => {
   same(parseMoney("100"), {
@@ -266,20 +266,20 @@ test("USD", (done) => {
     amount: 215.2,
     currency: "USD",
   });
-  done()
-})
+  done();
+});
 
 test("Multiple", (done) => {
   same(parseMoney("lei100 text and here is another one a bit later $500"), {
     amount: 100,
     currency: "RON",
   });
-  /** Needs to be fixed */
+  /** Has to be fixed */
   same(parseMoney("lei100 and $500"), {
     amount: 100500,
     currency: "RON",
   });
-  done()
-})
+  done();
+});
 
-run()
+run();

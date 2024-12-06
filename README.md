@@ -4,13 +4,6 @@ Extract money from text (number and currency detection)
 
 Returns the amount as `Number` and the currency as `string` from a text that contains money.
 
-## Installation
-
-```shell
-npm install --save parse-money
-yarn add parse-money
-```
-
 ## Usage
 
 Pass a string to extract money from.
